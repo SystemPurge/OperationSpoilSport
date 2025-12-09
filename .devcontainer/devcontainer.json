@@ -1,0 +1,16 @@
+{
+    "name": "Fedora Manual (Python Latest)",
+    "image": "fedora:latest",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    },
+    "postCreateCommand": "dnf install -y python3 git python3-tkinter && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt"
+}
